@@ -60,9 +60,6 @@ public class GcmIntentService extends IntentService {
    
    @Override
    protected void onHandleIntent(Intent intent) {
-      if (intent == null) { // This is bug in play-services-gcm:8.1.0, which is fixed in newer version (https://github.com/google/gcm/issues/20)
-            return;
-        }
       Bundle extras = intent.getExtras();
 
       if (isGcmMessage(intent))
